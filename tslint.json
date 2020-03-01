@@ -1,0 +1,10 @@
+{
+    "extends": [
+        "tslint:recommended"
+    ],
+    "rules": {
+        "newline-before-return": true,
+        "no-console": true,
+        "object-literal-sort-keys": true
+    }
+}

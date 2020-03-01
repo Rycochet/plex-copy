@@ -1,0 +1,39 @@
+{
+    "name": "plex-copy",
+    "version": "0.0.1",
+    "description": "CLI for copying transcoded files from Plex Optimised Versions",
+    "main": "dist/cli.js",
+    "scripts": {
+        "build": "tsc",
+        "lint": "npm run lint:ts && npm run lint:tsc",
+        "lint:ts": "tslint \"src/**/*.ts\"",
+        "lint:tsc": "tsc --noEmit --noUnusedLocals --noUnusedParameters"
+    },
+    "repository": "https://github.com/Rycochet/plex-copy",
+    "files": [
+        "dist"
+    ],
+    "bin": {
+        "plex-copy": "dist/cli.js"
+    },
+    "author": "Ryc O'Chet <rycochet@rycochet.com>",
+    "license": "MIT",
+    "dependencies": {
+        "@types/pluralize": "~0.0.29",
+        "@types/uniqid": "~4.1.3",
+        "chalk": "~3.0.0",
+        "chokidar": "~3.3.1",
+        "fast-glob": "~3.2.2",
+        "fs-extra": "~8.1.0",
+        "pluralize": "~8.0.0",
+        "typescript": "~3.8.3",
+        "uniqid": "~5.2.0",
+        "yargs": "~15.2.0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "~8.1.0",
+        "@types/node": "~13.7.7",
+        "@types/yargs": "~15.0.4",
+        "tslint": "~6.0.0"
+    }
+}
