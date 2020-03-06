@@ -10,26 +10,26 @@ import { PlexVersions, rxPath } from "./const";
 import { log } from "./log";
 import chalk from "chalk";
 import chokidar from "chokidar";
-import uniqid from "uniqid";
+import { remove } from "diacritics";
 import glob from "fast-glob";
 import { copy, pathExists, rename, rmdir, unlink } from "fs-extra";
 import { join, parse } from "path";
 import pluralize from "pluralize";
+import uniqid from "uniqid";
 
 /**
  * Find the true show name for a Plex Versions show.
  */
 function findShow(shows: string[], show: string) {
-    const rxShow = new RegExp("^" + show
+    const rxShow = new RegExp("^" + remove(show)
         .trim()
-        .replace(/[\u00A0-\u9999<>\&]/gim, ".")
         .replace(/['_]/i, ".?")
         .replace(/\s/i, "_?[ \-]")
         .replace(/\(/i, "\\(")
         .replace(/\)/i, "")
         + (show.indexOf("(") < 0 ? " \\(" : ""), "i");
 
-    return shows.find((val) => rxShow.test(val));
+    return shows.find((val) => rxShow.test(remove(val)));
 }
 
 /**
