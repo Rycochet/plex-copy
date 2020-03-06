@@ -21,6 +21,7 @@ import pluralize from "pluralize";
  */
 function findShow(shows: string[], show: string) {
     const rxShow = new RegExp("^" + show
+        .trim()
         .replace(/[\u00A0-\u9999<>\&]/gim, ".")
         .replace(/['_]/i, ".?")
         .replace(/\s/i, "_?[ \-]")
