@@ -36,7 +36,7 @@ function findShow(shows: string[], show: string) {
  * Find the specific episode relative path.
  */
 function findEpisode(episodes: string[], episode: string) {
-    const rxEpisode = new RegExp("[\\/\\^]" + episode.replace(".mp4", "[ \\.]"), "i");
+    const rxEpisode = new RegExp("[\\/\\^]" + episode.replace(".mp4", "[ \\.\\-]"), "i");
 
     return episodes.find((val) => rxEpisode.test(val));
 }
