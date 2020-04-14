@@ -23,10 +23,10 @@ import uniqid from "uniqid";
 function findShow(shows: string[], show: string) {
     const rxShow = new RegExp("^" + remove(show)
         .trim()
-        .replace(/['_]/i, ".?")
-        .replace(/\s/i, "_?[ \-]")
-        .replace(/\(/i, "\\(")
-        .replace(/\)/i, "")
+        .replace(/['_,]/gi, ".?")
+        .replace(/\s/gi, ".?[ \-]")
+        .replace(/\(/gi, "\\(")
+        .replace(/\)/gi, "")
         + (show.indexOf("(") < 0 ? " \\(" : ""), "i");
 
     return shows.find((val) => rxShow.test(remove(val)));
